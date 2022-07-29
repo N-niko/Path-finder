@@ -26,6 +26,7 @@ function draw() {
   if (FB) {
     pf.find ();
     pf.find ();
+    pf.find ();
   }
 
 }
