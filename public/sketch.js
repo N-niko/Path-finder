@@ -23,8 +23,10 @@ function draw() {
   
   b.show ();
   
-  if (FB)
+  if (FB) {
     pf.find ();
+    pf.find ();
+  }
 
 }
 
