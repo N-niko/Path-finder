@@ -72,7 +72,73 @@ mouseDragged = function () {
     
 }
 
-document.getElementById ("b").addEventListener('click', () => {
+b0 = document.getElementById ("b0");
+b1 = document.getElementById ("b1");
+b2 = document.getElementById ("b2");
+r = document.getElementById ("r");
+er = document.getElementById ("er");
+
+b0.addEventListener('click', () => {
+    be = 1;
+    dj = 1;
     FB = true;
+    b0.disabled = true;
+    b1.disabled = true;
+    b2.disabled = true;
+});
+
+b1.addEventListener('click', () => {
+    be = 1;
+    dj = 0;
+    FB = true;
+    b0.disabled = true;
+    b1.disabled = true;
+    b2.disabled = true;
+});
+
+b2.addEventListener('click', () => {
+    be = 0;
+    dj = 1;
+    FB = true;
+    b0.disabled = true;
+    b1.disabled = true;
+    b2.disabled = true;
+});
+
+r.addEventListener('click', () => {
+    b = new Board ();
+    pf = new PathF ();
+    FB = false;
+    b0.disabled = false;
+    b1.disabled = false;
+    b2.disabled = false;
+  
+    ns.push ({ x: bp.x, y: bp.y });
+});
+
+er.addEventListener('click', () => {
+    
+    let blocks = []
+    for (let y in b.b) {
+        for (let x in b.b[y]) {
+            if (b.b[y][x].n == -1) {
+                blocks.push ({ x: x, y: y });
+            }
+        }
+    }
+
+    b = new Board ();
+    pf = new PathF ();
+
+    for (block of blocks) {
+        b.b[block.y][block.x] = new Square (block.y, block.x, -1);
+    }
+
+    FB = false;
+    b0.disabled = false;
+    b1.disabled = false;
+    b2.disabled = false;
+  
+    ns.push ({ x: bp.x, y: bp.y });
 });
 

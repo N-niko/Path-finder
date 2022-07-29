@@ -11,18 +11,18 @@ class Square {
       if (n == 3 || n == 5) {
         this.G = sqrt (sq (bp.x - x) + sq (bp.y - y));
         this.H = sqrt (sq (sp.x - x) + sq (sp.y - y));
-        this.F = this.H + this.path;
+        this.F = this.H * dj + this.path * be;
         this.a = a;
       }
       if (n == 1) {
         this.G = sqrt (sq (bp.x - x) + sq (bp.y - y));
         this.H = sqrt (sq (sp.x - x) + sq (sp.y - y));
-        this.F = this.H + this.path;
+        this.F = this.H * dj + this.path * be;
       }
     }
     
     show () {
-      push ();
+      push ();  
       
       if (!this.n) 
         fill (220);
@@ -55,14 +55,14 @@ class Square {
       translate (-l / 2, -l / 2);
       
       let txt = this.F;
-      if (txt) {
-        textSize (4);
+      if (true) {
+        textSize (10);
         fill ('white');
         if (this.n == 5 || this.n == 1)
           fill ('black');
         
         textAlign (CENTER);
-        //text (UF (txt), this.x * l + l / 4, this.y * l + l / 4);
+        //text (UF (txt), this.x * l + l / 2, this.y * l + l / 2);
       }
         
       pop ();
