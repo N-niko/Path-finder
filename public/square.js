@@ -25,14 +25,14 @@ class Square {
       push ();  
       
       if (!this.n) 
-        fill (220);
+        fill (235, 250, 250);
       else if (this.n == 1) 
         fill ('lightGreen');
       else if (this.n == 2)
-        fill (180, 10, 140);
+        fill (120, 30, 150);
       else if (this.n == 3) 
         if (this.a == 0)
-          fill (60, 120, 110);
+          fill (65, 125, 115);
         else
           fill (70, 210, 200);
       
